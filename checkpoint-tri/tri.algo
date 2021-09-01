@@ -1,0 +1,22 @@
+PROCEDURE insert_sort(VAR arr: ARRAY_OF_INTERFER)
+VAR
+    i,j,Aux :INTEGER
+BEGIN
+    FOR i FROM 0 TO arr.lenght-1   DO
+        Aux:= arr[i];
+        j:= i-1;
+        WHILE (j >=0 AND arr[j] > Aux) DO
+            arr[j+1]:= arr[j];
+            j := j-1;
+        END_WHILE
+        arr[j+1] = Aux;
+    END_FOR
+END
+ALGORITHM TRI
+VAR
+    arr: ARRAY_OF_INTERFER;
+BEGIN
+WRITE("entrer arr");
+Read (arr);
+    insert_sort(arr);
+END
